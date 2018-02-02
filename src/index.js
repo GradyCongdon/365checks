@@ -1,0 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import Webfont from 'webfontloader';
+
+Webfont.load({
+  google: {
+    families: ['Rubik', 'sans-serif'],
+  }
+});
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
