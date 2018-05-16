@@ -1,3 +1,33 @@
-.today {
-  font-size: 7rem;
+:root {
+  --checksize: 1.5rem;
+  --blue: white;
+}
+input[type="checkbox"] {
+  height: var(--checksize);
+  width: var(--checksize);
+  margin: 1rem;
+  appearance: none;
+  border: solid 1px black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+input[type="checkbox"]:checked:before {
+  content: "";
+  height: var(--checksize);
+  width: var(--checksize);
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+} 
+
+input.today {
+  border: none;
+  box-shadow: 0 0 1000px 300px white;;
+  transition: box-shadow 1500ms ease;
+}
+input.today:checked {
+  box-shadow: none;
 }

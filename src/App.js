@@ -19,6 +19,9 @@ class App extends Component {
 
   onMark(event) {
     const i = parseInt(event.currentTarget.dataset.key, 10);
+    if (i !== dayOfYear()) {
+      return;
+    }
     let checks = this.state.checks;
     let index = checks.indexOf(i);
     if (index === -1) {
@@ -43,7 +46,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>365 checks</h1>
-        {checks}
+        <div className="container">
+          {checks}
+        </div>
       </div>
     );
   }
